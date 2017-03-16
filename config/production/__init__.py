@@ -1,3 +1,7 @@
+"""
+Prod related configs
+"""
+
 import os
 
 HOST = 'localhost'
