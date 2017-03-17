@@ -3,8 +3,9 @@ from copy import deepcopy
 from uuid import uuid4
 from flask import Blueprint, request
 from marshmallow_jsonapi import Schema, fields
-from app.api.utils import not_found, cant_process, conflict, \
-    ok, created, no_content
+from app.api.utils import (
+    not_found, cant_process, conflict,
+    ok, created, no_content)
 
 
 # Models
@@ -28,8 +29,9 @@ class SpotSchema(Schema):
 # in mem database, seeded.
 class Database:
     data = [
-        SpotModel(id=str(uuid4()), spot_id='275', description='C Street'),
-        SpotModel(id=str(uuid4()), spot_id='276', description='Silver Strand')
+        SpotModel(id=str(uuid4()), spot_id='4981', description='Pitas Point'),
+        SpotModel(id=str(uuid4()), spot_id='49737', description='Mondos'),
+        SpotModel(id=str(uuid4()), spot_id='4980', description='Emma Wood')
     ]
 
     def _get_data(self):

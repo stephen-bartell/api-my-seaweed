@@ -1,6 +1,7 @@
 from flask import Flask, request
 from app.api import hello
 from app.api import spots
+from app.api import reports
 
 
 def create_app(config_filename):
@@ -8,6 +9,7 @@ def create_app(config_filename):
     app.config.from_object(config_filename)
     app.register_blueprint(hello.blueprint)
     app.register_blueprint(spots.blueprint)
+    app.register_blueprint(reports.blueprint)
 
     @app.after_request
     def log_response(response):
